@@ -9,18 +9,30 @@ import javafx.scene.control.Label;
 
 public class FXMLController implements Initializable {
 
+
+
     @FXML
     private Label label;
 
     @FXML
+    void LogoutButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
-        label.setText("You're logged in");
+        label.setText("You're logged in !!!");
+    }
+    @FXML
+    void sgnButtonAction(ActionEvent event) {
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
     }
 }
 
