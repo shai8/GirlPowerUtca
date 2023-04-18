@@ -6,7 +6,19 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "librarybook", schema = "girlpowerutca")
+@NamedQueries({
+        @NamedQuery(name = "LibrarybookEntity.findAll", query = "select l from LibrarybookEntity l"),
+        @NamedQuery(name = "LibrarybookEntity.findByTitle", query = "select l from LibrarybookEntity l where l.title = ?1"),
+        @NamedQuery(name = "LibrarybookEntity.findByAuthor", query = "select l from LibrarybookEntity l where l.author = ?1"),
+        @NamedQuery(name = "LibrarybookEntity.findByYear", query = "select l from LibrarybookEntity l where l.year = ?1"),
+        @NamedQuery(name = "LibrarybookEntity.findByCategory", query = "select l from LibrarybookEntity l where l.category = ?1"),
+        @NamedQuery(name = "LibrarybookEntity.findByIsbn", query = "select l from LibrarybookEntity l where l.isbn = ?1"),
+        @NamedQuery(name = "LibrarybookEntity.findById", query = "select l from LibrarybookEntity l where l.id = ?1")
+})
+
+
 public class LibrarybookEntity {
+
     @Basic
     @Column(name = "Title")
     private String title;
@@ -87,4 +99,7 @@ public class LibrarybookEntity {
     public int hashCode() {
         return Objects.hash(title, author, year, category, isbn, id);
     }
+
+
 }
+

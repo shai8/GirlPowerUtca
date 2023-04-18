@@ -7,11 +7,11 @@ import java.util.Objects;
 @Entity
 @Table(name = "students", schema = "girlpowerutca")
 public class StudentsEntity {
+    @Basic
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false)
+    private Integer id;
     @Basic
     @Column(name = "Name")
     private String name;
@@ -28,13 +28,18 @@ public class StudentsEntity {
     @Column(name = "StudentID")
     private String studentId;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;

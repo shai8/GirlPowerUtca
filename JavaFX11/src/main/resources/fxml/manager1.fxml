@@ -33,11 +33,6 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Pages">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
             <Label text="ISBN" />
          </children>
       </VBox>
@@ -47,7 +42,6 @@
             <TextField fx:id="textfield_title" />
             <TextField fx:id="textfield_Author" />
             <TextField fx:id="textfield_year" />
-            <TextField fx:id="textfield_pages" />
             <TextField fx:id="textfield_isbn" />
          </children>
       </VBox>
@@ -57,7 +51,6 @@
           <TableColumn fx:id="column_title" prefWidth="90.0" text="Title" />
             <TableColumn fx:id="column_author" prefWidth="93.0" text="Author" />
             <TableColumn fx:id="column_year" prefWidth="56.0" text="Year" />
-            <TableColumn fx:id="column_pages" prefWidth="66.0" text="Pages" />
             <TableColumn fx:id="column_isbn" prefWidth="119.0" text="ISBN" />
         </columns>
       </TableView>
