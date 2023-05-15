@@ -1,57 +1,65 @@
 package hu.unideb.inf;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import hu.unideb.inf.Utils.HibernateUtil;
+import hu.unideb.inf.entitypackage.Users;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 
-
-import javafx.scene.control.Button;
-
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class FXMLController implements Initializable {
-
-
-
-
-
-    @FXML
-    private Button button;
-
-    @FXML
-    private TextField id;
-
     @FXML
     private Label label;
 
     @FXML
-    private PasswordField pass;
+    private Button loginbutton;
 
     @FXML
-    private Button sign;
-    @FXML
-    void LogoutButtonAction(ActionEvent event) {
-
-    }
+    private PasswordField passwordfield;
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("You're logged in !!!");
-    }
-    @FXML
-    void sgnButtonAction(ActionEvent event) {
+    private TextField usernamefield;
 
-    }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loginbutton.setOnAction(event -> handleLoginButtonAction());
+    }
 
+
+    private void handleLoginButtonAction() {
+        String username = usernamefield.getText();
+        String password = passwordfield.getText();
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String hql = "FROM Users u WHERE u.username = :username AND u.password = :password";
+            Query<Users> query = session.createQuery(hql, Users.class);
+            query.setParameter("username", username);
+            query.setParameter("password", password);
+            Users user = query.uniqueResult();
+
+            if (user != null) {
+                System.out.println("You are logged in");
+                // For example, navigate to another page or display a success message
+            } else {
+                // Login failed, display error message
+                showErrorMessage("Invalid username or password.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            showErrorMessage("An error occurred during login.");
+        }
+    }
+
+    private void showErrorMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Login Error");
+        alert.setHeaderText("Error" );
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
-
