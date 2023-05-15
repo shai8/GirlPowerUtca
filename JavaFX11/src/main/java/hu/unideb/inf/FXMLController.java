@@ -1,7 +1,7 @@
 package hu.unideb.inf;
 
-import hu.unideb.inf.Utils.HibernateUtil;
-import hu.unideb.inf.entitypackage.Users;
+import hu.unideb.inf.utils.HibernateUtil;
+import hu.unideb.inf.entitypackage.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -36,11 +36,11 @@ public class FXMLController implements Initializable {
         String password = passwordfield.getText();
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "FROM Users u WHERE u.username = :username AND u.password = :password";
-            Query<Users> query = session.createQuery(hql, Users.class);
+            String hql = "FROM User u WHERE u.username = :username AND u.password = :password";
+            Query<User> query = session.createQuery(hql, User.class);
             query.setParameter("username", username);
             query.setParameter("password", password);
-            Users user = query.uniqueResult();
+            User user = query.uniqueResult();
 
             if (user != null) {
                 System.out.println("You are logged in");

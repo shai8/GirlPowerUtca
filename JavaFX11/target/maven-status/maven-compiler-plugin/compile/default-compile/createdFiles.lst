@@ -1,0 +1,12 @@
+hu\unideb\inf\RentedBooksController.class
+hu\unideb\inf\entitypackage\Librarybook.class
+hu\unideb\inf\utils\HibernateUtil.class
+hu\unideb\inf\ReturnBooksController.class
+hu\unideb\inf\BookController.class
+hu\unideb\inf\WishListController.class
+hu\unideb\inf\HOMEController.class
+hu\unideb\inf\entitypackage\User.class
+hu\unideb\inf\MainApp.class
+hu\unideb\inf\AdminController.class
+hu\unideb\inf\entitypackage\Student.class
+hu\unideb\inf\FXMLController.class
