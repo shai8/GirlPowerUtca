@@ -1,157 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #F0F0F0;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.HOMEController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="192.0" fitWidth="248.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imgs/clogos/biblioteqor.png" />
-         </image>
-      </ImageView>
-      <BorderPane layoutY="25.0" prefHeight="671.0" prefWidth="900.0" AnchorPane.bottomAnchor="-96.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
-         <left>
-            <AnchorPane prefHeight="418.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <AnchorPane layoutY="228.0" prefHeight="328.0" prefWidth="214.0" style="-fx-background-color: #918393;">
+      <TabPane layoutX="248.0" prefHeight="600.0" prefWidth="652.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Search For Books">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E5E4E2;">
                      <children>
-                        <Button layoutX="15.0" layoutY="124.0" mnemonicParsing="false" text="My Space" />
-                        <Button layoutX="14.0" layoutY="176.0" mnemonicParsing="false" text="My Books" />
-                        <ScrollBar layoutX="200.0" layoutY="9.0" orientation="VERTICAL" prefHeight="301.0" prefWidth="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="9.0" />
-                        <Button layoutX="16.0" layoutY="226.0" mnemonicParsing="false" text="Sign Out " />
-                        <ProgressBar layoutY="309.0" prefWidth="200.0" progress="0.0" />
-                        <TextField layoutY="9.0" prefHeight="88.0" prefWidth="202.0" text="Welcome To Your Books  !">
+                        <Rectangle arcWidth="5.0" fill="#fcfff7" height="570.0" stroke="#dcc9c5" strokeType="INSIDE" width="193.0" />
+                        <TextArea fx:id="bookdisplaylabel" layoutX="207.0" layoutY="117.0" prefHeight="418.0" prefWidth="396.0" />
+                        <TextField fx:id="titlelabel" layoutX="23.0" layoutY="59.0" prefHeight="26.0" prefWidth="104.0" promptText="enter a title" />
+                        <Text layoutX="24.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title " wrappingWidth="50.73004150390625">
                            <font>
-                              <Font name="System Bold Italic" size="12.0" />
+                              <Font name="System Bold Italic" size="13.0" />
                            </font>
-                        </TextField>
-                        <ProgressBar layoutY="-9.0" prefHeight="18.0" prefWidth="214.0" progress="0.0" />
-                        <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="107.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/clogos/student.png" />
-                           </image>
-                        </ImageView>
+                        </Text>
+                        <Text layoutX="23.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="authorlabel" layoutX="23.0" layoutY="137.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an author" />
+                        <Text layoutX="24.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of publishing ">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="dobLabel" layoutX="23.0" layoutY="219.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an DOB" />
+                        <Text layoutX="23.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="genrelabel" layoutX="23.0" layoutY="301.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an Genre" />
+                        <Text layoutX="26.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="ISBNlabel" layoutX="23.0" layoutY="368.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an ISBN" />
+                        <Text layoutX="23.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="langlabel" layoutX="23.0" layoutY="448.0" prefHeight="26.0" prefWidth="104.0" promptText="pick a language" />
                      </children>
                   </AnchorPane>
-               </children>
-            </AnchorPane>
-         </left>
-         <center>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.89" prefHeight="406.0" prefWidth="435.0" style="-fx-background-color: #C8B4F3;" BorderPane.alignment="CENTER">
-               <children>
-                  <Text layoutX="-126.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Text>
-                  <Accordion layoutX="6.0" />
-                  <TextField layoutX="-126.0" layoutY="72.0" prefHeight="26.0" prefWidth="114.0" text="Chaima " />
-                  <Separator layoutX="3.0" layoutY="3.0" orientation="VERTICAL" prefHeight="200.0" />
-                  <Button layoutX="371.0" layoutY="1.0" mnemonicParsing="false" text="Modify" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="SRC_ATOP" height="31.0" layoutX="5.0" layoutY="-1.0" stroke="#918393" strokeType="INSIDE" width="430.0">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9368420839309692" green="0.9160233736038208" blue="0.930943489074707" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.7843137383460999" green="0.7058823704719543" blue="0.9529411792755127" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                  </Rectangle>
-                  <Rectangle arcWidth="5.0" height="408.0" layoutX="-126.0" layoutY="-1.0" stroke="#c3b2e8" strokeType="INSIDE" width="137.0">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9368420839309692" green="0.9160233736038208" blue="0.930943489074707" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.7843137383460999" green="0.7058823704719543" blue="0.9529411792755127" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                  </Rectangle>
-                  <ToolBar layoutX="-126.0" layoutY="-5.0" prefHeight="40.0" prefWidth="565.0">
-                    <items>
-                      <Button mnemonicParsing="false" text="Search For Books" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" text="Rented  Books" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" text="Return Books " />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" text="WishList" />
-                    </items>
-                  </ToolBar>
-                  <Text layoutX="-123.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title " wrappingWidth="50.73004150390625">
-                     <font>
-                        <Font name="System Bold Italic" size="13.0" />
-                     </font>
-                  </Text>
-                  <TextField layoutX="-109.0" layoutY="72.0" prefHeight="26.0" prefWidth="104.0" promptText="enter a title" />
-                  <Text layoutX="-122.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
-                     <font>
-                        <Font name="System Bold Italic" size="13.0" />
-                     </font>
-                  </Text>
-                  <TextField layoutX="-109.0" layoutY="135.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an author" />
-                  <TextField layoutX="-109.0" layoutY="198.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an DOB" />
-                  <TextField layoutX="-109.0" layoutY="261.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an Genre" />
-                  <TextField layoutX="-109.0" layoutY="319.0" prefHeight="26.0" prefWidth="104.0" promptText="enter an ISBN" />
-                  <Text layoutX="-123.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language">
-                     <font>
-                        <Font name="System Bold Italic" size="13.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="-123.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of publishing ">
-                     <font>
-                        <Font name="System Bold Italic" size="13.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="-123.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre">
-                     <font>
-                        <Font name="System Bold Italic" size="13.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="-120.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN">
-                     <font>
-                        <Font name="System Bold Italic" size="13.0" />
-                     </font>
-                  </Text>
-                  <TextField layoutX="-109.0" layoutY="377.0" prefHeight="26.0" prefWidth="104.0" promptText="pick a language" />
-                  <ListView layoutX="16.0" layoutY="65.0" prefHeight="320.0" prefWidth="414.0" />
-               </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
-      <Button layoutX="862.0" layoutY="1.0" mnemonicParsing="false" text="X" />
-      <Button layoutX="834.0" layoutY="1.0" mnemonicParsing="false" text="-" />
+               </content>
+            </Tab>
+            <Tab text="Rented Books" />
+            <Tab text="Return Books" />
+            <Tab text="Wishlist " />
+         </tabs>
+      </TabPane>
+      <AnchorPane layoutY="-1.0" prefHeight="602.0" prefWidth="248.0" style="-fx-background-color: #F8F8FF;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/clogos/student.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="accountbutton" layoutX="6.0" layoutY="260.0" mnemonicParsing="false" onAction="#actiononaccountbutton" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #AFA7A7;" text="My Account " textFill="#f8f7fa">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="bookbutton" layoutX="4.0" layoutY="348.0" mnemonicParsing="false" onAction="#actionOnbookbutton" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #AFA7A7;" text="My books " textFill="#faf7f7">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="signoutbutton" layoutX="6.0" layoutY="439.0" mnemonicParsing="false" onAction="#actionOnsignoutButton" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #AFA7A7;" text="Sign out " textFill="#faf7f7">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
